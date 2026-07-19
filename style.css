@@ -1,0 +1,689 @@
+/* ===========================
+   NoDa Store
+=========================== */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Cairo',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#ffd6e8,#ffeef6,#fff5fb);
+min-height:100vh;
+overflow-x:hidden;
+}
+
+#loader{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#ffd6e8;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+z-index:9999;
+}
+
+.loader-logo{
+width:170px;
+height:170px;
+border-radius:50%;
+box-shadow:0 0 35px rgba(255,255,255,.9);
+animation:pop 1.2s infinite alternate;
+}
+
+#loader h1{
+margin-top:20px;
+font-size:38px;
+color:#b74b7b;
+}
+
+#loader p{
+margin-top:10px;
+color:#777;
+}
+
+.loading{
+width:250px;
+height:12px;
+background:white;
+border-radius:20px;
+margin-top:25px;
+overflow:hidden;
+}
+
+.loading-bar{
+width:0%;
+height:100%;
+background:#ff4f93;
+animation:loading 3s linear forwards;
+}
+
+@keyframes loading{
+100%{
+width:100%;
+}
+}
+
+@keyframes pop{
+100%{
+transform:scale(1.08);
+}
+}
+
+#website{
+    display:none;
+    max-width:500px;
+    margin:40px auto;
+    padding:35px;
+    background:rgba(255,255,255,.28);
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+    border-radius:30px;
+    border:1px solid rgba(255,255,255,.4);
+    box-shadow:0 20px 50px rgba(255,105,180,.25);
+    animation:fadeUp .8s ease;
+}
+
+
+
+
+
+header{
+text-align:center;
+margin-top:30px;
+
+}
+
+.logo{
+
+width:170px;
+
+height:170px;
+
+border-radius:50%;
+
+animation:glow 3s infinite ease-in-out;
+
+transition:.4s;
+
+cursor:pointer;
+
+}
+
+.logo:hover{
+
+transform:scale(1.08) rotate(5deg);
+
+}
+
+@keyframes glow{
+
+0%{
+
+box-shadow:0 0 15px #ffb6d5;
+
+}
+
+50%{
+
+box-shadow:0 0 45px hotpink;
+
+}
+
+100%{
+
+box-shadow:0 0 15px #ffb6d5;
+
+}
+
+}
+
+.logo:hover{
+
+transform:scale(1.08) rotate(6deg);
+
+box-shadow:0 0 60px hotpink;
+
+}
+
+
+
+header h1{
+font-size:42px;
+color:#d84b8a;
+}
+
+header p{
+color:#777;
+margin-top:10px;
+font-size:18px;
+}
+
+.buttons{
+margin-top:40px;
+display:flex;
+flex-direction:column;
+gap:18px;
+}
+
+.buttons a{
+position: relative;
+overflow: hidden;
+text-decoration:none;
+padding:18px;
+border-radius:18px;
+font-size:20px;
+font-weight:bold;
+color:white;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:12px;
+transition:.35s;
+box-shadow:0 12px 25px rgba(0,0,0,.15);
+}
+
+.buttons a:hover{
+transform:translateY(-6px) scale(1.03);
+}
+
+.whatsapp{
+background:#25D366;
+}
+
+.instagram{
+background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4);
+}
+
+.telegram{
+background:#229ED9;
+}
+
+.facebook{
+background:#1877F2;
+}
+
+.phone{
+background:#ff5b9d;
+}
+
+footer{
+text-align:center;
+padding:35px;
+color:#777;
+font-size:18px;
+}
+/* ===================== */
+/* Premium Dark Mode */
+/* ===================== */
+
+body{
+    transition:0.5s;
+}
+
+body.dark{
+    background:#0d0d0d;
+    color:#fff;
+}
+
+body.dark .background{
+    background:linear-gradient(135deg,#0d0d0d,#161616,#202020);
+}
+
+body.dark .circle{
+    background:rgba(255,255,255,.05);
+    box-shadow:none;
+}
+
+body.dark header{
+    background:rgba(20,20,20,.55);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,.08);
+}
+
+body.dark footer{
+    background:#121212;
+    color:#ddd;
+}
+
+body.dark h1{
+    color:#ff8fbe;
+    text-shadow:0 0 20px rgba(255,105,180,.4);
+}
+
+body.dark p{
+    color:#d0d0d0;
+}
+
+body.dark .buttons a{
+    filter:brightness(.88);
+    transition:.35s;
+}
+
+body.dark .buttons a:hover{
+    filter:brightness(1);
+    transform:translateY(-6px) scale(1.03);
+}
+
+body.dark #darkMode,
+body.dark #shareBtn,
+body.dark #topBtn{
+    background:#1f1f1f;
+    color:white;
+    box-shadow:0 0 20px rgba(255,255,255,.08);
+}
+
+body.dark .logo,
+body.dark .loader-logo{
+    filter:drop-shadow(0 0 20px rgba(255,182,193,.45));
+}
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(50px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+.background{
+
+position:fixed;
+
+width:100%;
+
+height:100%;
+
+left:0;
+
+top:0;
+
+overflow:hidden;
+
+z-index:-1;
+
+}
+
+.circle{
+
+position:absolute;
+
+border-radius:50%;
+
+background:rgba(255,182,193,.35);
+
+filter:blur(20px);
+
+animation:float 12s infinite linear;
+
+}
+
+.c1{
+
+width:250px;
+
+height:250px;
+
+top:-80px;
+
+left:-80px;
+
+}
+
+.c2{
+
+width:180px;
+
+height:180px;
+
+bottom:60px;
+
+right:40px;
+
+}
+
+.c3{
+
+width:120px;
+
+height:120px;
+
+top:40%;
+
+left:70%;
+
+}
+
+.c4{
+
+width:160px;
+
+height:160px;
+
+bottom:-50px;
+
+left:25%;
+
+}
+
+@keyframes float{
+
+0%{
+
+transform:translateY(0) rotate(0deg);
+
+}
+
+50%{
+
+transform:translateY(-40px) rotate(180deg);
+
+}
+
+100%{
+
+transform:translateY(0) rotate(360deg);
+
+}
+
+}
+@keyframes pop{
+
+0%{
+transform:translateY(20px) scale(.8);
+opacity:0;
+}
+
+100%{
+transform:translateY(0) scale(1);
+opacity:1;
+}
+
+}
+/* ===================== */
+/* Button Shine Effect */
+/* ===================== */
+
+.buttons a::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:-120%;
+
+width:60%;
+
+height:100%;
+
+background:linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.55),
+transparent
+);
+
+transform:skewX(-25deg);
+
+transition:.8s;
+
+}
+
+.buttons a:hover::before{
+
+left:160%;
+
+}
+
+.buttons a{
+
+transition:.35s;
+
+}
+
+.buttons a:hover{
+
+transform:translateY(-6px) scale(1.03);
+
+box-shadow:0 18px 35px rgba(0,0,0,.25);
+
+}
+#website{
+
+animation:fadeIn .8s ease;
+
+}
+
+@keyframes fadeIn{
+
+from{
+
+opacity:0;
+
+transform:translateY(35px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+/* ===================== */
+/* Floating Hearts */
+/* ===================== */
+
+.hearts{
+
+position:fixed;
+
+left:0;
+
+top:0;
+
+width:100%;
+
+height:100%;
+
+overflow:hidden;
+
+pointer-events:none;
+
+z-index:-1;
+
+}
+
+.hearts span{
+
+position:absolute;
+
+bottom:-60px;
+
+font-size:30px;
+
+color:#ff7eb9;
+
+animation:heartMove linear infinite;
+
+opacity:.25;
+
+}
+
+.hearts span:nth-child(1){
+left:10%;
+animation-duration:8s;
+font-size:22px;
+}
+
+.hearts span:nth-child(2){
+left:25%;
+animation-duration:12s;
+font-size:35px;
+}
+
+.hearts span:nth-child(3){
+left:45%;
+animation-duration:10s;
+font-size:28px;
+}
+
+.hearts span:nth-child(4){
+left:65%;
+animation-duration:15s;
+font-size:40px;
+}
+
+.hearts span:nth-child(5){
+left:82%;
+animation-duration:9s;
+font-size:24px;
+}
+
+.hearts span:nth-child(6){
+left:92%;
+animation-duration:13s;
+font-size:30px;
+}
+
+@keyframes heartMove{
+
+0%{
+
+transform:translateY(0) rotate(0deg);
+
+opacity:0;
+
+}
+
+20%{
+
+opacity:.3;
+
+}
+
+100%{
+
+transform:translateY(-120vh) rotate(360deg);
+
+opacity:0;
+
+}
+
+}
+/* ===================== */
+/* Responsive للموبايل */
+/* ===================== */
+
+@media (max-width: 768px){
+
+#website{
+    width:95%;
+    padding:25px;
+    margin:20px auto;
+}
+
+.logo{
+    width:130px;
+    height:130px;
+}
+
+.loader-logo{
+    width:130px;
+    height:130px;
+}
+
+header h1{
+    font-size:32px;
+}
+
+header p{
+    font-size:16px;
+}
+
+.buttons a{
+    padding:16px;
+    font-size:18px;
+    border-radius:16px;
+}
+
+.buttons a i{
+    font-size:22px;
+}
+
+#darkMode,
+#shareBtn,
+#topBtn{
+    width:50px;
+    height:50px;
+    font-size:20px;
+}
+
+footer{
+    font-size:15px;
+    padding:20px;
+}
+
+.sparkles{
+    width:180px;
+    height:180px;
+}
+
+}
+
+@media (max-width:480px){
+
+.logo{
+    width:110px;
+    height:110px;
+}
+
+.loader-logo{
+    width:110px;
+    height:110px;
+}
+
+header h1{
+    font-size:28px;
+}
+
+header p{
+    font-size:15px;
+}
+
+.buttons{
+    gap:15px;
+}
+
+.buttons a{
+    font-size:17px;
+    padding:15px;
+}
+
+footer{
+    font-size:14px;
+}
+
+}
